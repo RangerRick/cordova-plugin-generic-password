@@ -2,32 +2,32 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:rim="http://www.blackberry.com/ns/widgets"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-1password"
-        version="0.1.5">
-    <name>cordova-plugin-1password</name>
-    <description>Cordova 1Password Plugin for iOS - Mady by SPIRIT/21</description>
+        id="cordova-plugin-generic-password"
+        version="0.1.0">
+    <name>cordova-plugin-generic-password</name>
+    <description>Cordova Generic Password Plugin for iOS</description>
     <license>MIT</license>
-    <keywords>cordova,1password</keywords>
-    <repo>https://github.com/SPIRIT-21/cordova-plugin-1password</repo>
+    <keywords>cordova,1password,lastpass</keywords>
+    <repo>https://github.com/RangerRick/cordova-plugin-generic-password</repo>
     <issue></issue>
 
-    <js-module src="www/onepassword.js" name="OnePassword">
-        <clobbers target="OnePassword"/>
+    <js-module src="www/genericpassword.js" name="GenericPassword">
+        <clobbers target="GenericPassword"/>
     </js-module>
 
 
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="OnePassword">
-                <param name="ios-package" value="OnePassword"/>
+            <feature name="GenericPassword">
+                <param name="ios-package" value="GenericPassword"/>
             </feature>
         </config-file>
 
-        <header-file src="src/ios/OnePassword.h"/>
-        <source-file src="src/ios/OnePassword.m"/>
-        <header-file src="src/ios/OnePasswordExtension.h"/>
-        <source-file src="src/ios/OnePasswordExtension.m"/>
+        <header-file src="src/ios/GenericPassword.h"/>
+        <source-file src="src/ios/GenericPassword.m"/>
+        <header-file src="src/ios/GenericPasswordExtension.h"/>
+        <source-file src="src/ios/GenericPasswordExtension.m"/>
     </platform>
 
 </plugin>

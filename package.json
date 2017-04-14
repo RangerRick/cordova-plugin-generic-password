@@ -1,24 +1,25 @@
 {
-  "name": "cordova-plugin-1password",
-  "version": "0.1.5",
-  "description": "Cordova 1Password Plugin from SPIRIT/21 AG",
+  "name": "cordova-plugin-generic-password",
+  "version": "0.1.0",
+  "description": "Cordova Generic Password Plugin for iOS",
   "cordova": {
-    "id": "cordova-plugin-1password",
+    "id": "cordova-plugin-generic-password",
     "platforms": [
       "ios"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SPIRIT-21/cordova-plugin-1password"
+    "url": "https://github.com/RangerRick/cordova-plugin-generic-password"
   },
   "keywords": [
     "ecosystem:cordova",
     "cordova-ios",
     "cordova",
     "1password",
+    "lastpass",
     "onepassword"
   ],
-  "author": "SPIRIT/21",
+  "author": "Benjamin Reed",
   "license": "MIT"
 }

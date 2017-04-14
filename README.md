@@ -1,12 +1,12 @@
-# [SPIRIT/21](http://spirit21.com) cordova-plugin-1password
+# cordova-plugin-generic-password
 
-Plugin for adding [1Password App Extension](https://github.com/AgileBits/onepassword-app-extension) into Cordova/PhoneGap Apps.
+Plugin for adding [Generic Password App Extension](https://github.com/joelastpass/generic-password-app-extension) into Cordova/PhoneGap Apps.
 
 
 ## Installation
 
 ```
-cordova plugin add cordova-plugin-1password
+cordova plugin add cordova-plugin-generic-password
 ```
 
 ### Supported Platforms
@@ -16,12 +16,12 @@ cordova plugin add cordova-plugin-1password
 
 ## Properties
 
-- OnePassword.findLoginForUrl(succesCallback, errorCallback, url)
-- OnePassword.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
+- GenericPassword.findLoginForUrl(succesCallback, errorCallback, url)
+- GenericPassword.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
 
 ## Usage
 
-You **do not** need to reference any JavaScript, the Cordova plugin architecture will add a OnePassword object to your root automatically when you build.
+You **do not** need to reference any JavaScript, the Cordova plugin architecture will add a GenericPassword object to your root automatically when you build.
 
 Ensure you use the plugin after your `deviceready` event has been fired.
 
@@ -34,7 +34,7 @@ Pass the following arguments to the `findLoginForUrl()` function, to prompt the 
 5. URL (String)*
 
 ```
-OnePassword.findLoginForUrl(succesCallback, errorCallback, url)
+GenericPassword.findLoginForUrl(succesCallback, errorCallback, url)
 ```
 
 ### Store login for url
@@ -51,7 +51,7 @@ Pass the following arguments to the `storeLoginForUrl()` function, to prompt the
 
 
 ```
-OnePassword.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
+GenericPassword.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
 ```
 
 ## *Best Practices ([see also](https://github.com/AgileBits/onepassword-app-extension#best-practices))
@@ -64,7 +64,8 @@ OnePassword.storeLoginForUrl(succesCallback, errorCallback, username, password, 
 
 ## The MIT License (MIT)
 
-Copyright (c) 2016 SPIRIT/21
+Copyright (c) 2017 Benjamin Reed
+Original 1Password plugin Copyright (c) 2016 SPIRIT/21
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

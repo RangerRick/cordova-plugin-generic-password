@@ -1,23 +1,24 @@
 //
-//  OnePassword.m
-//  1password Cordova Plugin for iOS
+//  GenericPassword.m
+//  Password Cordova Plugin for iOS
 //
 //  Created by Raphael Fischer on 28.01.16.
+//  Converted from OnePassword to GenericPassword by Benjamin Reed on 14.04.17.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
-#import "OnePassword.h"
-#import "OnePasswordExtension.h"
+#import "GenericPassword.h"
+#import "GenericPasswordExtension.h"
 
-@implementation OnePassword : CDVPlugin
+@implementation GenericPassword : CDVPlugin
 
 @synthesize passwordExtension = _passwordExtension;
 
 -(void)pluginInitialize
 {
-        OnePasswordExtension *extension = [[OnePasswordExtension alloc] init];
+        GenericPasswordExtension *extension = [[GenericPasswordExtension alloc] init];
         _passwordExtension = extension;
 }
 
@@ -44,7 +45,7 @@
     NSString* url = [command.arguments objectAtIndex:0];
 
     if(url != nil){
-        [_passwordExtension fillItemIntoWebView:self.webView forViewController:self.viewController url:url sender:nil showOnlyLogins:NO completion:completionHandler];
+        [_passwordExtension fillLoginIntoWebView:self.webView forViewController:self.viewController sender:nil completion:completionHandler];
     }
     else{
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"URL is empty"];
@@ -94,20 +95,7 @@
                                                 AppExtensionGeneratedPasswordMinLengthKey: @(8),
 
                                                 // The maximum password length can be 50 or less.
-                                                AppExtensionGeneratedPasswordMaxLengthKey: @(30),
-
-                                                // If YES, the 1Password will guarantee that the generated password will contain at least one digit (number between 0 and 9). Passing NO will not exclude digits from the generated password.
-                                                AppExtensionGeneratedPasswordRequireDigitsKey: @(YES),
-
-                                                // If YES, the 1Password will guarantee that the generated password will contain at least one symbol (See the list bellow). Passing NO with will exclude symbols from the generated password.
-                                                AppExtensionGeneratedPasswordRequireSymbolsKey: @(YES),
-
-                                                // Here are all the symbols available in the the 1Password Password Generator:
-                                                // !@#$%^&*()_-+=|[]{}'\";.,>?/~`
-                                                // The string for AppExtensionGeneratedPasswordForbiddenCharactersKey should contain the symbols and characters that you wish 1Password to exclude from the generated password.
-                                                AppExtensionGeneratedPasswordForbiddenCharactersKey: @"!@#$%/0lIO"
-
-
+                                                AppExtensionGeneratedPasswordMaxLengthKey: @(30)
                                                 };
 
     void (^completionHandler)(NSDictionary *loginDictionary, NSError *error);
@@ -137,7 +125,7 @@
                                           AppExtensionTitleKey: title? : @"",
                                           AppExtensionUsernameKey: username? : @"",
                                           AppExtensionPasswordKey: password ? : @"",
-                                          AppExtensionNotesKey: @"Saved with the SPIRIT/21 OnePassword Cordova Plugin",
+                                          AppExtensionNotesKey: @"Saved with the SPIRIT/21 GenericPassword Cordova Plugin",
                                           AppExtensionSectionTitleKey: sectionTitle? : @"",
                                                                                 AppExtensionFieldsKey: @{
                                           //                                              @"firstname" : @"asdfsdf"? : @"",
@@ -145,7 +133,7 @@
                                                                                         }
                                           };
 
-        [[OnePasswordExtension sharedExtension] storeLoginForURLString:url loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self.viewController sender:nil completion:completionHandler];
+        [[GenericPasswordExtension sharedExtension] storeLoginForURLString:url loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self.viewController sender:nil completion:completionHandler];
     }
     else{
                 CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"URL is empty"];
