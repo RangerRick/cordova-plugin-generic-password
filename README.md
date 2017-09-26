@@ -1,4 +1,4 @@
-# cordova-plugin-generic-password
+# cordova-plugin-password
 
 Plugin for adding [Generic Password App Extension](https://github.com/joelastpass/generic-password-app-extension) into Cordova/PhoneGap Apps.
 
@@ -6,22 +6,21 @@ Plugin for adding [Generic Password App Extension](https://github.com/joelastpas
 ## Installation
 
 ```
-cordova plugin add cordova-plugin-generic-password
+cordova plugin add cordova-plugin-password
 ```
 
 ### Supported Platforms
 
-- iOS 9.0
-- No support for iPad!!
+- none
 
 ## Properties
 
-- GenericPassword.findLoginForUrl(succesCallback, errorCallback, url)
-- GenericPassword.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
+- Password.findLoginForUrl(succesCallback, errorCallback, url)
+- Password.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
 
 ## Usage
 
-You **do not** need to reference any JavaScript, the Cordova plugin architecture will add a GenericPassword object to your root automatically when you build.
+You **do not** need to reference any JavaScript, the Cordova plugin architecture will add a Password object to your root automatically when you build.
 
 Ensure you use the plugin after your `deviceready` event has been fired.
 
@@ -34,7 +33,7 @@ Pass the following arguments to the `findLoginForUrl()` function, to prompt the 
 5. URL (String)*
 
 ```
-GenericPassword.findLoginForUrl(succesCallback, errorCallback, url)
+Password.findLoginForUrl(succesCallback, errorCallback, url)
 ```
 
 ### Store login for url
@@ -51,7 +50,7 @@ Pass the following arguments to the `storeLoginForUrl()` function, to prompt the
 
 
 ```
-GenericPassword.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
+Password.storeLoginForUrl(succesCallback, errorCallback, username, password, url, title, sectionTitle)
 ```
 
 ## *Best Practices ([see also](https://github.com/AgileBits/onepassword-app-extension#best-practices))

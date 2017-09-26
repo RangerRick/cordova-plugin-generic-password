@@ -1,5 +1,5 @@
 //
-//  GenericPassword.m
+//  Password.m
 //  Password Cordova Plugin for iOS
 //
 //  Created by Raphael Fischer on 28.01.16.
@@ -9,16 +9,16 @@
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
-#import "GenericPassword.h"
-#import "GenericPasswordExtension.h"
+#import "Password.h"
+#import "OnePasswordExtension.h"
 
-@implementation GenericPassword : CDVPlugin
+@implementation Password : CDVPlugin
 
 @synthesize passwordExtension = _passwordExtension;
 
 -(void)pluginInitialize
 {
-        GenericPasswordExtension *extension = [[GenericPasswordExtension alloc] init];
+        OnePasswordExtension *extension = [[OnePasswordExtension alloc] init];
         _passwordExtension = extension;
 }
 
@@ -125,7 +125,7 @@
                                           AppExtensionTitleKey: title? : @"",
                                           AppExtensionUsernameKey: username? : @"",
                                           AppExtensionPasswordKey: password ? : @"",
-                                          AppExtensionNotesKey: @"Saved with the SPIRIT/21 GenericPassword Cordova Plugin",
+                                          AppExtensionNotesKey: @"Saved with the RangerRick Password Cordova Plugin",
                                           AppExtensionSectionTitleKey: sectionTitle? : @"",
                                                                                 AppExtensionFieldsKey: @{
                                           //                                              @"firstname" : @"asdfsdf"? : @"",
@@ -133,7 +133,7 @@
                                                                                         }
                                           };
 
-        [[GenericPasswordExtension sharedExtension] storeLoginForURLString:url loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self.viewController sender:nil completion:completionHandler];
+        [[OnePasswordExtension sharedExtension] storeLoginForURLString:url loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self.viewController sender:nil completion:completionHandler];
     }
     else{
                 CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"URL is empty"];

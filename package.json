@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-generic-password",
-  "version": "0.1.0",
-  "description": "Cordova Generic Password Plugin for iOS",
+  "name": "cordova-plugin-password",
+  "version": "0.2.0",
+  "description": "Cordova Password Plugin for iOS",
   "cordova": {
-    "id": "cordova-plugin-generic-password",
+    "id": "cordova-plugin-password",
     "platforms": [
       "ios"
     ]
